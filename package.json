@@ -4,16 +4,21 @@
   "description": "A ReactJS credit card form with",
   "main": "index.js",
   "dependencies": {
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
     "eslint": "^6.8.0",
     "parcel-bundler": "^1.12.4",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
+  },
   "scripts": {
+    "dev": "parcel start src/index.html",
+    "format": "prettier --write \"src/**/*.{js,scss,css,html,jsx}\" ",
+      "build": "parcel build src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,10 +26,8 @@
     "url": "git+https://github.com/Caleb335/credit-card.git"
   },
   "keywords": [
-    "credit",
-    "card",
-    "form",
-    "validation"
+    "credit-card",
+    "form-validation"
   ],
   "author": "Caleb Olojo",
   "license": "ISC",
