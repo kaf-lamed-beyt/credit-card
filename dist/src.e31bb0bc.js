@@ -28393,7 +28393,7 @@ var App = /*#__PURE__*/function (_React$Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, _react.default.createElement(_Card.default, null), _react.default.createElement("h1", null, "Hello dutches"));
+      return _react.default.createElement("div", null, _react.default.createElement(_Card.default, null));
     }
   }]);
 
@@ -28474,40 +28474,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../dist/worker.js":[function(require,module,exports) {
-var CACHE_NAME = 'credit-card-UI';
-var urlsToCache = ['/', '/completed']; // enabling the service worker to be installed
-
-self.addEventListener('install', function (e) {
-  e.waitUntil(caches.open(CACHE_NAME).then(function (cache) {
-    console.log('Opened cache');
-    return cache.addAll(urlsToCache);
-  }));
-}); // caching and returning requests to events
-
-self.addEventListener('fetch', function (e) {
-  e.respondWith(caches.match(e.request).then(function (response) {
-    // once cached, response is returned
-    if (response) {
-      return response;
-    }
-
-    return fetch(e.request);
-  }));
-}); // updating service worker
-
-self.addEventListener('activate', function (e) {
-  var cacheWhiteList = ['credit-card-UI'];
-  e.waitUntil(caches.keys().then(function (cacheNames) {
-    return Promise.all(cacheNames.map(function (cacheName) {
-      if (cacheWhiteList.indexOf(cacheName) === -1) {
-        // if cacheName exceeds
-        return caches.delete(cacheName); //  delete cache name
-      }
-    }));
-  }));
-});
-},{}],"index.js":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -28518,18 +28485,10 @@ var _App = _interopRequireDefault(require("./components/App"));
 
 require("./scss/app.scss");
 
-var ServiceWorker = _interopRequireWildcard(require("../dist/worker"));
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom.default.render(_react.default.createElement(_App.default, null), document.getElementById('root'));
-
-ServiceWorker.register();
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./components/App":"components/App.js","./scss/app.scss":"scss/app.scss","../dist/worker":"../dist/worker.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./components/App":"components/App.js","./scss/app.scss":"scss/app.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -28557,7 +28516,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35393" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43121" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

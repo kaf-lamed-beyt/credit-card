@@ -6,7 +6,6 @@ class App extends React.Component {
         return(
             <div>
                 <Card />
-                <h1>Hello dutches</h1>
             </div>
         )
     }
