@@ -6,7 +6,7 @@ class App extends React.Component {
         return (
             <main>
                 <div className="app__base">
-                    <div className="form__card">
+                    <div className="form__card box__shadow">
                         <form>
                             <div className="form__group">
                                 <div className="input number">

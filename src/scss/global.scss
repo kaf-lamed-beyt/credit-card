@@ -19,21 +19,26 @@ body {
     justify-content: center;
 }
 
+.box__shadow {
+    box-shadow: 0 2.8px 4px rgba(0, 0, 0, 0.012),
+    0 6.2px 12.5px rgba(0, 0, 0, 0.034), 0 12px 21.2px rgba(0, 0, 0, 0.035),
+    0 24.3px 42.2px rgba(0, 0, 0, 0.043),
+    0 38.2px 64.2px rgba(0, 0, 0, 0.062),
+    0 62.3px 100px rgba(0, 0, 0, 0.012);
+}
+
 .form__card {
-    height: 600px;
+    height: 500px;
+    margin-top: 12%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 form {
-    margin-top: 23%;
+    margin-top: 12%;
     width: 650px;
     padding: 0.4em 1.4em 2em;
     font-size: 1.75em;
-    border-radius: 6px;
-    box-shadow: 0 2.8px 4px rgba(0, 0, 0, 0.012),
-        0 6.2px 12.5px rgba(0, 0, 0, 0.034), 0 12px 21.2px rgba(0, 0, 0, 0.035),
-        0 24.3px 42.2px rgba(0, 0, 0, 0.043),
-        0 38.2px 64.2px rgba(0, 0, 0, 0.062),
-        0 62.3px 100px rgba(0, 0, 0, 0.012);
 }
 
 .form__control {

@@ -28337,7 +28337,7 @@ var App = /*#__PURE__*/function (_React$Component) {
       return _react.default.createElement("main", null, _react.default.createElement("div", {
         className: "app__base"
       }, _react.default.createElement("div", {
-        className: "form__card"
+        className: "form__card box__shadow"
       }, _react.default.createElement("form", null, _react.default.createElement("div", {
         className: "form__group"
       }, _react.default.createElement("div", {
@@ -28550,7 +28550,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38709" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43629" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
