@@ -28285,7 +28285,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"components/Card.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"components/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28319,66 +28319,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var Card = /*#__PURE__*/function (_React$Component) {
-  _inherits(Card, _React$Component);
-
-  var _super = _createSuper(Card);
-
-  function Card() {
-    _classCallCheck(this, Card);
-
-    return _super.apply(this, arguments);
-  }
-
-  _createClass(Card, [{
-    key: "render",
-    value: function render() {
-      return _react.default.createElement("div", {
-        className: "card"
-      });
-    }
-  }]);
-
-  return Card;
-}(_react.default.Component);
-
-exports.default = Card;
-},{"react":"../node_modules/react/index.js"}],"components/App.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _Card = _interopRequireDefault(require("./Card"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
+// import Card from './Card'
 var App = /*#__PURE__*/function (_React$Component) {
   _inherits(App, _React$Component);
 
@@ -28393,7 +28334,100 @@ var App = /*#__PURE__*/function (_React$Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, _react.default.createElement(_Card.default, null));
+      return _react.default.createElement("main", null, _react.default.createElement("div", {
+        className: "app__base"
+      }, _react.default.createElement("div", {
+        className: "form__card"
+      }, _react.default.createElement("form", null, _react.default.createElement("div", {
+        className: "form__group"
+      }, _react.default.createElement("div", {
+        className: "input number"
+      }, _react.default.createElement("label", null, "Card Number")), _react.default.createElement("input", {
+        type: "text",
+        name: "card number",
+        className: "form__control"
+      })), _react.default.createElement("div", {
+        className: "form__group"
+      }, _react.default.createElement("div", {
+        className: "input name"
+      }, _react.default.createElement("label", null, "Card Name")), _react.default.createElement("input", {
+        type: "text",
+        name: "card name",
+        className: "form__control"
+      })), _react.default.createElement("div", {
+        className: "form__group"
+      }, _react.default.createElement("div", {
+        className: "expr"
+      }, _react.default.createElement("label", null, "Expiration Date")), _react.default.createElement("div", {
+        className: "flex"
+      }, _react.default.createElement("div", {
+        className: "flex__item"
+      }, _react.default.createElement("select", {
+        className: "select month"
+      }, _react.default.createElement("option", {
+        value: "month"
+      }, "Month"), _react.default.createElement("option", {
+        value: "January"
+      }, "Jan"), _react.default.createElement("option", {
+        value: "February"
+      }, "Feb"), _react.default.createElement("option", {
+        value: "March"
+      }, "Mar"), _react.default.createElement("option", {
+        value: "April"
+      }, "Apr"), _react.default.createElement("option", {
+        value: "May"
+      }, "May"), _react.default.createElement("option", {
+        value: "June"
+      }, "Jun"), _react.default.createElement("option", {
+        value: "July"
+      }, "Jul"), _react.default.createElement("option", {
+        value: "August"
+      }, "Aug"), _react.default.createElement("option", {
+        value: "September"
+      }, "Sept"), _react.default.createElement("option", {
+        value: "October"
+      }, "Oct"), _react.default.createElement("option", {
+        value: "November"
+      }, "Nov"), _react.default.createElement("option", {
+        value: "December"
+      }, "Dec"))), _react.default.createElement("div", {
+        className: "flex__item"
+      }, _react.default.createElement("select", {
+        className: "select year"
+      }, _react.default.createElement("option", {
+        value: "year"
+      }, "Year"), _react.default.createElement("option", {
+        value: "2020"
+      }, "20"), _react.default.createElement("option", {
+        value: "2021"
+      }, "21"), _react.default.createElement("option", {
+        value: "2022"
+      }, "22"), _react.default.createElement("option", {
+        value: "2023"
+      }, "23"), _react.default.createElement("option", {
+        value: "2024"
+      }, "24"), _react.default.createElement("option", {
+        value: "2025"
+      }, "25"), _react.default.createElement("option", {
+        value: "2026"
+      }, "26"), _react.default.createElement("option", {
+        value: "2027"
+      }, "27"), _react.default.createElement("option", {
+        value: "2028"
+      }, "28"), _react.default.createElement("option", {
+        value: "2029"
+      }, "29"), _react.default.createElement("option", {
+        value: "2030"
+      }, "30"), _react.default.createElement("option", {
+        value: "2031"
+      }, "31"))), _react.default.createElement("div", {
+        className: "flex__items"
+      }, _react.default.createElement("input", {
+        type: "text",
+        name: "cvv",
+        className: "cvv",
+        placeholder: "CVV"
+      }))))))));
     }
   }]);
 
@@ -28402,7 +28436,7 @@ var App = /*#__PURE__*/function (_React$Component) {
 
 var _default = App;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./Card":"components/Card.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -28516,7 +28550,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43121" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38709" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
