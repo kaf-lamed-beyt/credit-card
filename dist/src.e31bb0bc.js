@@ -28337,6 +28337,8 @@ var App = /*#__PURE__*/function (_React$Component) {
       return _react.default.createElement("main", null, _react.default.createElement("div", {
         className: "app__base"
       }, _react.default.createElement("div", {
+        className: "credit__card"
+      }), _react.default.createElement("div", {
         className: "form__card box__shadow"
       }, _react.default.createElement("form", null, _react.default.createElement("div", {
         className: "form__group"
@@ -28345,7 +28347,8 @@ var App = /*#__PURE__*/function (_React$Component) {
       }, _react.default.createElement("label", null, "Card Number")), _react.default.createElement("input", {
         type: "text",
         name: "card number",
-        className: "form__control"
+        className: "form__control",
+        placeholder: "#### #### #### ####"
       })), _react.default.createElement("div", {
         className: "form__group"
       }, _react.default.createElement("div", {
@@ -28353,7 +28356,8 @@ var App = /*#__PURE__*/function (_React$Component) {
       }, _react.default.createElement("label", null, "Card Name")), _react.default.createElement("input", {
         type: "text",
         name: "card name",
-        className: "form__control"
+        className: "form__control",
+        placeholder: "Jane Doe"
       })), _react.default.createElement("div", {
         className: "form__group"
       }, _react.default.createElement("div", {
@@ -28427,7 +28431,9 @@ var App = /*#__PURE__*/function (_React$Component) {
         name: "cvv",
         className: "cvv",
         placeholder: "CVV"
-      }))))))));
+      })))), _react.default.createElement("button", {
+        className: "btn"
+      }, "Submit")))));
     }
   }]);
 

@@ -17,26 +17,34 @@ body {
 
 .app__base {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  flex-direction: column; }
+
+.credit__card {
+  width: 300px;
+  height: 200px;
+  background: #00203fff; }
 
 .box__shadow {
   box-shadow: 0 2.8px 4px rgba(0, 0, 0, 0.012), 0 6.2px 12.5px rgba(0, 0, 0, 0.034), 0 12px 21.2px rgba(0, 0, 0, 0.035), 0 24.3px 42.2px rgba(0, 0, 0, 0.043), 0 38.2px 64.2px rgba(0, 0, 0, 0.062), 0 62.3px 100px rgba(0, 0, 0, 0.012); }
 
 .form__card {
-  height: 500px;
+  height: 525px;
+  width: 680px;
   margin-top: 12%;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px; }
 
 form {
-  margin-top: 12%;
-  width: 650px;
+  margin-top: 28%;
+  width: 100%;
   padding: 0.4em 1.4em 2em;
-  font-size: 1.75em; }
+  font-size: 1.75em;
+  margin-bottom: 5%; }
 
 .form__control {
   width: 100%;
-  height: 36px;
+  height: 42px;
   border-radius: 4px;
   outline: none;
   border: none;
@@ -48,7 +56,8 @@ form {
   display: flex; }
 
 .flex__item {
-  width: 100%; }
+  width: 100%;
+  margin-top: 2%; }
 
 .select {
   width: 55%;
@@ -72,6 +81,16 @@ form {
   .cvv::placeholder {
     padding: .1em .3em;
     color: black; }
+
+.btn {
+  width: 94%;
+  height: 37px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  margin-left: 3%;
+  margin-top: 2%;
+  font-size: 1.2em; }
 
 
 /*# sourceMappingURL=/src.e31bb0bc.css.map */

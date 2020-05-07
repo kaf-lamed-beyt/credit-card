@@ -6,6 +6,9 @@ class App extends React.Component {
         return (
             <main>
                 <div className="app__base">
+                    <div className="credit__card">
+                        
+                    </div>
                     <div className="form__card box__shadow">
                         <form>
                             <div className="form__group">
@@ -16,6 +19,7 @@ class App extends React.Component {
                                     type="text"
                                     name="card number"
                                     className="form__control"
+                                    placeholder="#### #### #### ####"
                                 />
                             </div>
                             <div className="form__group">
@@ -26,6 +30,7 @@ class App extends React.Component {
                                     type="text"
                                     name="card name"
                                     className="form__control"
+                                    placeholder="Jane Doe"
                                 />
                             </div>
                             <div className="form__group">
@@ -75,7 +80,6 @@ class App extends React.Component {
                                             <option value="2031">31</option>
                                         </select>
                                     </div>
-
                                     <div className="flex__items">
                                         <input
                                             type="text"
@@ -86,6 +90,7 @@ class App extends React.Component {
                                     </div>
                                 </div>
                             </div>
+                            <button className="btn">Submit</button>
                         </form>
                     </div>
                 </div>
