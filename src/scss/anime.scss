@@ -1,18 +1,38 @@
 .credit__card {
     animation: drop 3s forwards;
     opacity: 0;
-    animation-delay: 3s;
+    animation-delay: 6s;
+}
+
+.form__card {
+    animation: skewScale 3s forwards;
+    opacity: 0;
+    animation-delay: 2s;
 }
 
 @keyframes drop {
     0% {
-        opacity: .3;
-        transform: translateY();
-    } 50% {
-        opacity: .5;
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.5;
         transform: translateY(30px);
-    } 100% {
+    }
+    100% {
         opacity: 1;
-        transform: translateY();
+    }
+}
+
+@keyframes skewScale {
+    0% {
+        opacity: 0.4;
+        transform: skewX(4deg);
+    }
+    50% {
+        opacity: 0.8;
+        transform: skewY(-5deg);
+    }
+    100% {
+        opacity: 1;
     }
 }

@@ -28359,18 +28359,18 @@ var App = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "addGaps",
     value: function addGaps(str, gapNo) {
-      var newStr = " ";
+      var newStr = ' ';
       var len = str.length;
 
       for (var i = 0; i < len; i++) {
         newStr = newStr + str[i];
 
         while (newStr.length % (gapNo + 1) === 0) {
-          newStr = newStr + " ";
+          newStr = newStr + ' ';
         }
       }
 
-      return newStr.trim(" ");
+      return newStr.trim(' ');
     }
   }, {
     key: "render",
@@ -28396,8 +28396,16 @@ var App = /*#__PURE__*/function (_React$Component) {
       }), _react.default.createElement("h3", {
         className: "bank__name"
       }, "GTBank"))), _react.default.createElement("div", {
+        className: "card__chip__type"
+      }, _react.default.createElement("div", {
         className: "card__chip"
       }), _react.default.createElement("div", {
+        className: "master-card"
+      }, _react.default.createElement("div", {
+        className: "circle orangered"
+      }), _react.default.createElement("div", {
+        className: "circle gold"
+      }))), _react.default.createElement("div", {
         className: "credit__card__details"
       }, _react.default.createElement("form", {
         className: "credit-card"
@@ -28524,7 +28532,7 @@ var App = /*#__PURE__*/function (_React$Component) {
         onChange: this.handleChange
       })))), _react.default.createElement("button", {
         className: "btn"
-      }, "Submit")))));
+      }, "Complete Transaction")))));
     }
   }]);
 

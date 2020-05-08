@@ -29,15 +29,15 @@ class App extends React.Component {
     }
 
     addGaps(str, gapNo) {
-        let newStr = " ";
-        let len = str.length;
-        for (let i = 0; i<len; i++) {
-            newStr = newStr + str[i];
-            while(newStr.length % (gapNo+1) === 0) {
-                newStr = newStr + " ";
-            } 
+        let newStr = ' '
+        let len = str.length
+        for (let i = 0; i < len; i++) {
+            newStr = newStr + str[i]
+            while (newStr.length % (gapNo + 1) === 0) {
+                newStr = newStr + ' '
+            }
         }
-        return newStr.trim(" ");
+        return newStr.trim(' ')
     }
 
     render() {
@@ -60,7 +60,13 @@ class App extends React.Component {
                                 <h3 className="bank__name">GTBank</h3>
                             </div>
                         </div>
-                        <div className="card__chip"></div>
+                        <div className="card__chip__type">
+                            <div className="card__chip"></div>
+                            <div className="master-card">
+                                <div className="circle orangered"></div>
+                                <div className="circle gold"></div>
+                            </div>
+                        </div>
                         <div className="credit__card__details">
                             <form className="credit-card">
                                 <input
@@ -178,7 +184,9 @@ class App extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <button className="btn">Submit</button>
+                            <button className="btn">
+                                Complete Transaction
+                            </button>
                         </form>
                     </div>
                 </div>
