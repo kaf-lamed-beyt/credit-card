@@ -28337,11 +28337,12 @@ var App = /*#__PURE__*/function (_React$Component) {
       cardNumber: '',
       cardName: '',
       cvv: '',
-      yearOption: 'year',
-      monthOption: 'month'
+      yearOption: 'YY',
+      monthOption: 'MM'
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     _this.handleSelect = _this.handleSelect.bind(_assertThisInitialized(_this));
+    _this.addGaps = _this.addGaps.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -28356,6 +28357,22 @@ var App = /*#__PURE__*/function (_React$Component) {
       this.setState(_defineProperty({}, e.target.name, e.target.value));
     }
   }, {
+    key: "addGaps",
+    value: function addGaps(str, gapNo) {
+      var newStr = " ";
+      var len = str.length;
+
+      for (var i = 0; i < len; i++) {
+        newStr = newStr + str[i];
+
+        while (newStr.length % (gapNo + 1) === 0) {
+          newStr = newStr + " ";
+        }
+      }
+
+      return newStr.trim(" ");
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$state = this.state,
@@ -28368,7 +28385,39 @@ var App = /*#__PURE__*/function (_React$Component) {
         className: "app__base"
       }, _react.default.createElement("div", {
         className: "credit__card box__shadow"
+      }, _react.default.createElement("div", {
+        className: "card__brand"
+      }, _react.default.createElement("p", {
+        className: "card__type"
+      }, "debit"), _react.default.createElement("div", {
+        className: "bank__brand"
+      }, _react.default.createElement("div", {
+        className: "square__inner"
+      }), _react.default.createElement("h3", {
+        className: "bank__name"
+      }, "GTBank"))), _react.default.createElement("div", {
+        className: "card__chip"
       }), _react.default.createElement("div", {
+        className: "credit__card__details"
+      }, _react.default.createElement("form", {
+        className: "credit-card"
+      }, _react.default.createElement("input", {
+        type: "text",
+        className: "card__form__control",
+        value: cardNumber,
+        placeholder: "0000 0000 0000 0000"
+      }), _react.default.createElement("div", {
+        className: "name_expiry"
+      }, _react.default.createElement("input", {
+        type: "text",
+        className: "card__form__control name",
+        value: cardName,
+        placeholder: "Jane Doe"
+      }), _react.default.createElement("input", {
+        type: "text",
+        className: "card__form__control expiry",
+        value: "".concat(monthOption, " / ").concat(yearOption)
+      }))))), _react.default.createElement("div", {
         className: "form__card box__shadow"
       }, _react.default.createElement("form", null, _react.default.createElement("div", {
         className: "form__group"
@@ -28376,10 +28425,10 @@ var App = /*#__PURE__*/function (_React$Component) {
         className: "input number"
       }, _react.default.createElement("label", null, "Card Number")), _react.default.createElement("input", {
         type: "text",
-        value: cardNumber,
+        value: this.addGaps(cardNumber, 4),
         name: "cardNumber",
         className: "form__control",
-        placeholder: "#### #### #### ####",
+        placeholder: "0000 0000 0000 0000",
         onChange: this.handleChange
       })), _react.default.createElement("div", {
         className: "form__group"
@@ -28408,29 +28457,29 @@ var App = /*#__PURE__*/function (_React$Component) {
       }, _react.default.createElement("option", {
         value: "month"
       }, monthOption), _react.default.createElement("option", {
-        value: "January"
+        value: "01"
       }, "Jan"), _react.default.createElement("option", {
-        value: "February"
+        value: "02"
       }, "Feb"), _react.default.createElement("option", {
-        value: "March"
+        value: "03"
       }, "Mar"), _react.default.createElement("option", {
-        value: "April"
+        value: "04"
       }, "Apr"), _react.default.createElement("option", {
-        value: "May"
+        value: "05"
       }, "May"), _react.default.createElement("option", {
-        value: "June"
+        value: "06"
       }, "Jun"), _react.default.createElement("option", {
-        value: "July"
+        value: "07"
       }, "Jul"), _react.default.createElement("option", {
-        value: "August"
+        value: "08"
       }, "Aug"), _react.default.createElement("option", {
-        value: "September"
+        value: "09"
       }, "Sept"), _react.default.createElement("option", {
-        value: "October"
+        value: "10"
       }, "Oct"), _react.default.createElement("option", {
-        value: "November"
+        value: "11"
       }, "Nov"), _react.default.createElement("option", {
-        value: "December"
+        value: "12"
       }, "Dec"))), _react.default.createElement("div", {
         className: "flex__item"
       }, _react.default.createElement("select", {
@@ -28441,29 +28490,29 @@ var App = /*#__PURE__*/function (_React$Component) {
       }, _react.default.createElement("option", {
         value: "year"
       }, yearOption), _react.default.createElement("option", {
-        value: "2020"
+        value: "20"
       }, "20"), _react.default.createElement("option", {
-        value: "2021"
+        value: "21"
       }, "21"), _react.default.createElement("option", {
-        value: "2022"
+        value: "22"
       }, "22"), _react.default.createElement("option", {
-        value: "2023"
+        value: "23"
       }, "23"), _react.default.createElement("option", {
-        value: "2024"
+        value: "24"
       }, "24"), _react.default.createElement("option", {
-        value: "2025"
+        value: "25"
       }, "25"), _react.default.createElement("option", {
-        value: "2026"
+        value: "26"
       }, "26"), _react.default.createElement("option", {
-        value: "2027"
+        value: "27"
       }, "27"), _react.default.createElement("option", {
-        value: "2028"
+        value: "28"
       }, "28"), _react.default.createElement("option", {
-        value: "2029"
+        value: "29"
       }, "29"), _react.default.createElement("option", {
-        value: "2030"
+        value: "30"
       }, "30"), _react.default.createElement("option", {
-        value: "2031"
+        value: "31"
       }, "31"))), _react.default.createElement("div", {
         className: "flex__items"
       }, _react.default.createElement("input", {

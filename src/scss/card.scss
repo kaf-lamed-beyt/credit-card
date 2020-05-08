@@ -1,5 +1,79 @@
-.card {
-    width: 300px;
-    height: 600px;
-    background: #282a28;
+.credit__card {
+    width: 440px;
+    height: 252px;
+    background: rgb(228, 85, 33);
+    margin-top: 7%;
+    margin-left: 10%;
+    border-radius: 8px;
+}
+
+.credit__card__details {
+    margin-top: -25%;
+}
+
+.card__brand {
+    width: 100%;
+    color: ghostwhite;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2em 1em 0.9em;
+    padding-left: 2em;
+}
+
+.card__chip {
+    height: 45px;
+    width: 60px;
+    margin-left: 4em;
+    background: rgb(228, 152, 53);
+    border-radius: 5px;
+}
+
+.bank__brand {
+    height: 70px;
+    width: 70px;
+    border: 1px solid ghostwhite;
+    padding: 0.2em 0.5em;
+}
+
+.square__inner {
+    width: 30%;
+    height: 30%;
+    margin-left: 4em;
+    margin-top: 1em;
+    background: ghostwhite;
+}
+
+.card__type {
+    color: rgb(34, 33, 33);
+    font-size: 2em;
+    margin-top: 0.8em;
+    font-weight: bold;
+    margin-left: 1em;
+}
+
+.card__brand h3 {
+    margin-top: 0.3em;
+    font-size: 1.6em;
+}
+
+.card__form__control {
+    height: 26px;
+    width: 100%;
+    border: 1px solid ghostwhite;
+    background: none;
+    font-size: 1.5em;
+    padding: 0.6em 0.4em 0.8em;
+}
+
+.name {
+    width: 75%;
+}
+
+.expiry {
+    width: 25%;
+    font-size: 20px;
+}
+
+.credit-card input {
+    margin-top: 0.1em;
 }
