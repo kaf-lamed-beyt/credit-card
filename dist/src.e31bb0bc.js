@@ -28299,6 +28299,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -28326,18 +28328,46 @@ var App = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(App);
 
   function App() {
+    var _this;
+
     _classCallCheck(this, App);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this);
+    _this.state = {
+      cardNumber: '',
+      cardName: '',
+      cvv: '',
+      yearOption: 'year',
+      monthOption: 'month'
+    };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleSelect = _this.handleSelect.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(App, [{
+    key: "handleChange",
+    value: function handleChange(e) {
+      this.setState(_defineProperty({}, e.target.name, e.target.value));
+    }
+  }, {
+    key: "handleSelect",
+    value: function handleSelect(e) {
+      this.setState(_defineProperty({}, e.target.name, e.target.value));
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this$state = this.state,
+          cardNumber = _this$state.cardNumber,
+          cardName = _this$state.cardName,
+          cvv = _this$state.cvv,
+          yearOption = _this$state.yearOption,
+          monthOption = _this$state.monthOption;
       return _react.default.createElement("main", null, _react.default.createElement("div", {
         className: "app__base"
       }, _react.default.createElement("div", {
-        className: "credit__card"
+        className: "credit__card box__shadow"
       }), _react.default.createElement("div", {
         className: "form__card box__shadow"
       }, _react.default.createElement("form", null, _react.default.createElement("div", {
@@ -28346,18 +28376,22 @@ var App = /*#__PURE__*/function (_React$Component) {
         className: "input number"
       }, _react.default.createElement("label", null, "Card Number")), _react.default.createElement("input", {
         type: "text",
-        name: "card number",
+        value: cardNumber,
+        name: "cardNumber",
         className: "form__control",
-        placeholder: "#### #### #### ####"
+        placeholder: "#### #### #### ####",
+        onChange: this.handleChange
       })), _react.default.createElement("div", {
         className: "form__group"
       }, _react.default.createElement("div", {
         className: "input name"
       }, _react.default.createElement("label", null, "Card Name")), _react.default.createElement("input", {
         type: "text",
-        name: "card name",
+        value: cardName,
+        name: "cardName",
         className: "form__control",
-        placeholder: "Jane Doe"
+        placeholder: "Jane Doe",
+        onChange: this.handleChange
       })), _react.default.createElement("div", {
         className: "form__group"
       }, _react.default.createElement("div", {
@@ -28367,10 +28401,13 @@ var App = /*#__PURE__*/function (_React$Component) {
       }, _react.default.createElement("div", {
         className: "flex__item"
       }, _react.default.createElement("select", {
-        className: "select month"
+        className: "select month",
+        defaultValue: monthOption,
+        name: "monthOption",
+        onChange: this.handleSelect
       }, _react.default.createElement("option", {
         value: "month"
-      }, "Month"), _react.default.createElement("option", {
+      }, monthOption), _react.default.createElement("option", {
         value: "January"
       }, "Jan"), _react.default.createElement("option", {
         value: "February"
@@ -28397,10 +28434,13 @@ var App = /*#__PURE__*/function (_React$Component) {
       }, "Dec"))), _react.default.createElement("div", {
         className: "flex__item"
       }, _react.default.createElement("select", {
-        className: "select year"
+        className: "select year",
+        defaultValue: yearOption,
+        name: "yearOption",
+        onChange: this.handleSelect
       }, _react.default.createElement("option", {
         value: "year"
-      }, "Year"), _react.default.createElement("option", {
+      }, yearOption), _react.default.createElement("option", {
         value: "2020"
       }, "20"), _react.default.createElement("option", {
         value: "2021"
@@ -28429,8 +28469,10 @@ var App = /*#__PURE__*/function (_React$Component) {
       }, _react.default.createElement("input", {
         type: "text",
         name: "cvv",
+        value: cvv,
         className: "cvv",
-        placeholder: "CVV"
+        placeholder: "CVV",
+        onChange: this.handleChange
       })))), _react.default.createElement("button", {
         className: "btn"
       }, "Submit")))));
@@ -28556,7 +28598,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43629" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42575" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

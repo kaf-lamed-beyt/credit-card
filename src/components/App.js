@@ -2,13 +2,38 @@ import React from 'react'
 // import Card from './Card'
 
 class App extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            cardNumber: '',
+            cardName: '',
+            cvv: '',
+            yearOption: 'year',
+            monthOption: 'month',
+        }
+        this.handleChange = this.handleChange.bind(this)
+        this.handleSelect = this.handleSelect.bind(this)
+    }
+
+    handleChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value,
+        })
+    }
+
+    handleSelect(e) {
+        this.setState({
+            [e.target.name]: e.target.value,
+        })
+    }
+
     render() {
+        const { cardNumber, cardName, cvv, yearOption, monthOption } = this.state
+
         return (
             <main>
                 <div className="app__base">
-                    <div className="credit__card">
-                        
-                    </div>
+                    <div className="credit__card box__shadow"></div>
                     <div className="form__card box__shadow">
                         <form>
                             <div className="form__group">
@@ -17,9 +42,11 @@ class App extends React.Component {
                                 </div>
                                 <input
                                     type="text"
-                                    name="card number"
+                                    value={cardNumber}
+                                    name="cardNumber"
                                     className="form__control"
                                     placeholder="#### #### #### ####"
+                                    onChange={this.handleChange}
                                 />
                             </div>
                             <div className="form__group">
@@ -28,9 +55,11 @@ class App extends React.Component {
                                 </div>
                                 <input
                                     type="text"
-                                    name="card name"
+                                    value={cardName}
+                                    name="cardName"
                                     className="form__control"
                                     placeholder="Jane Doe"
+                                    onChange={this.handleChange}
                                 />
                             </div>
                             <div className="form__group">
@@ -39,8 +68,13 @@ class App extends React.Component {
                                 </div>
                                 <div className="flex">
                                     <div className="flex__item">
-                                        <select className="select month">
-                                            <option value="month">Month</option>
+                                        <select
+                                            className="select month"
+                                            defaultValue={monthOption}
+                                            name="monthOption"
+                                            onChange={this.handleSelect}
+                                        >
+                                            <option value="month">{monthOption}</option>
                                             <option value="January">Jan</option>
                                             <option value="February">
                                                 Feb
@@ -64,8 +98,13 @@ class App extends React.Component {
                                         </select>
                                     </div>
                                     <div className="flex__item">
-                                        <select className="select year">
-                                            <option value="year">Year</option>
+                                        <select
+                                            className="select year"
+                                            defaultValue={yearOption}
+                                            name="yearOption"
+                                            onChange={this.handleSelect}
+                                        >
+                                            <option value="year">{yearOption}</option>
                                             <option value="2020">20</option>
                                             <option value="2021">21</option>
                                             <option value="2022">22</option>
@@ -84,8 +123,10 @@ class App extends React.Component {
                                         <input
                                             type="text"
                                             name="cvv"
+                                            value={cvv}
                                             className="cvv"
                                             placeholder="CVV"
+                                            onChange={this.handleChange}
                                         />
                                     </div>
                                 </div>
