@@ -18,18 +18,32 @@
   padding: 1.2em 1em 0.9em;
   padding-left: 2em; }
 
-.card__chip__type, .master-card {
+.card__chip__type,
+.master-card {
+  margin-top: 2%;
   display: flex;
   justify-content: space-between; }
 
+.master-card {
+  position: relative;
+  left: -50px;
+  margin-top: 1%; }
+
+.gold {
+  position: absolute;
+  background: #e49228;
+  left: 25px;
+  opacity: .7; }
+
+.orangered {
+  background: #ac3105;
+  left: 0; }
+
 .circle {
-  height: 45px;
-  width: 45px;
+  height: 48px;
+  width: 48px;
   border-radius: 50%;
-  border: 1px solid ghostwhite; }
-  .circle.gold {
-    margin-left: auto;
-    background: #e45521; }
+  border: none; }
 
 .card__chip {
   height: 45px;

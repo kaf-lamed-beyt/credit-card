@@ -20,20 +20,37 @@
     padding-left: 2em;
 }
 
-.card__chip__type, .master-card {
+
+.card__chip__type,
+.master-card {
+    margin-top: 2%;
     display: flex;
     justify-content: space-between;
 }
 
+.master-card {
+    position: relative;
+    left: -50px;
+    margin-top: 1%;
+}
+
+.gold {
+    position: absolute;
+    background: rgb(228, 146, 40);
+    left: 25px;
+    opacity: .7;
+}
+
+.orangered {
+    background: rgb(172, 49, 5);
+    left: 0;
+}
+
 .circle {
-    height: 45px;
-    width: 45px;
+    height: 48px;
+    width: 48px;
     border-radius: 50%;
-    border: 1px solid ghostwhite;
-    &.gold {
-        margin-left: auto;
-    background: rgb(228, 85, 33);
-    }
+    border: none;
 }
 
 .card__chip {
