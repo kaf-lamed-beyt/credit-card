@@ -28343,6 +28343,7 @@ var App = /*#__PURE__*/function (_React$Component) {
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     _this.handleSelect = _this.handleSelect.bind(_assertThisInitialized(_this));
     _this.addGaps = _this.addGaps.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -28373,14 +28374,29 @@ var App = /*#__PURE__*/function (_React$Component) {
       return newStr.trim(' ');
     }
   }, {
-    key: "render",
-    value: function render() {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
       var _this$state = this.state,
           cardNumber = _this$state.cardNumber,
           cardName = _this$state.cardName,
-          cvv = _this$state.cvv,
           yearOption = _this$state.yearOption,
-          monthOption = _this$state.monthOption;
+          monthOption = _this$state.monthOption,
+          cvv = _this$state.cvv;
+      e.preventDefault();
+
+      if (cardNumber || cardName || yearOption || monthOption || cvv === ' ') {
+        alert("This fields can't be empty");
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$state2 = this.state,
+          cardNumber = _this$state2.cardNumber,
+          cardName = _this$state2.cardName,
+          cvv = _this$state2.cvv,
+          yearOption = _this$state2.yearOption,
+          monthOption = _this$state2.monthOption;
       return _react.default.createElement("main", null, _react.default.createElement("div", {
         className: "app__base"
       }, _react.default.createElement("div", {
@@ -28427,7 +28443,11 @@ var App = /*#__PURE__*/function (_React$Component) {
         value: "".concat(monthOption, " / ").concat(yearOption)
       }))))), _react.default.createElement("div", {
         className: "form__card box__shadow"
-      }, _react.default.createElement("form", null, _react.default.createElement("div", {
+      }, _react.default.createElement("form", {
+        action: "#",
+        method: "POST",
+        onSubmit: this.handleSubmit
+      }, _react.default.createElement("div", {
         className: "form__group"
       }, _react.default.createElement("div", {
         className: "input number"

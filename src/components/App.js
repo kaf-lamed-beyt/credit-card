@@ -14,6 +14,7 @@ class App extends React.Component {
         this.handleChange = this.handleChange.bind(this)
         this.handleSelect = this.handleSelect.bind(this)
         this.addGaps = this.addGaps.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange(e) {
@@ -38,6 +39,28 @@ class App extends React.Component {
             }
         }
         return newStr.trim(' ')
+    }
+
+    handleSubmit(e) {
+        const {
+            cardNumber,
+            cardName,
+            yearOption,
+            monthOption,
+            cvv,
+        } = this.state
+
+        e.preventDefault()
+
+        if (
+            cardNumber ||
+            cardName ||
+            yearOption ||
+            monthOption ||
+            cvv === ' '
+        ) {
+            alert("This fields can't be empty")
+        }
     }
 
     render() {
@@ -92,7 +115,11 @@ class App extends React.Component {
                         </div>
                     </div>
                     <div className="form__card box__shadow">
-                        <form>
+                        <form
+                            action="#"
+                            method="POST"
+                            onSubmit={this.handleSubmit}
+                        >
                             <div className="form__group">
                                 <div className="input number">
                                     <label>Card Number</label>
