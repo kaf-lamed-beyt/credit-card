@@ -29,38 +29,28 @@ class App extends React.Component {
         })
     }
 
-    addGaps(str, gapNo) {
-        let newStr = ' '
-        let len = str.length
-        for (let i = 0; i < len; i++) {
-            newStr = newStr + str[i]
-            while (newStr.length % (gapNo + 1) === 0) {
-                newStr = newStr + ' '
+    addGaps(e) {
+        let userInput = e.target.value.split(' ').join('')
+        
+        const firstStr = userInput[0]
+        let count = 0
+        let formattedStr = ' '
+
+        if (firstStr === '4' || firstStr === '5') {
+            userInput = userInput.slice(0,16)
+            
+            for (let i = 0; i < userInput.length; i++) {
+                formattedStr += userInput[i]
+                count += 1
+                if (count % 4 === 0 && i !== userInput.length -1) {
+                    formattedStr += ' '
+                }
             }
         }
-        return newStr.trim(' ')
     }
 
     handleSubmit(e) {
-        const {
-            cardNumber,
-            cardName,
-            yearOption,
-            monthOption,
-            cvv,
-        } = this.state
-
         e.preventDefault()
-
-        if (
-            cardNumber ||
-            cardName ||
-            yearOption ||
-            monthOption ||
-            cvv === ' '
-        ) {
-            alert("This fields can't be empty")
-        }
     }
 
     render() {
