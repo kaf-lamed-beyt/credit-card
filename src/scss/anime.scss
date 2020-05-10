@@ -10,6 +10,12 @@
     animation-delay: 2s;
 }
 
+form {
+    opacity: 0;
+    animation: skewScale 3s forwards linear;
+    animation-delay: 7s;
+}
+
 @keyframes drop {
     0% {
         opacity: 0.3;
@@ -26,23 +32,19 @@
 @keyframes skewScale {
     0% {
         opacity: 0.2;
-        width: 18%;
-        height: 18%;
+        height: 50px;
     }
     25% {
         opacity: 0.4;
-        width: 35%;
-        height: 35%;
+        height: 150px;
     }
     50% {
         opacity: 0.6;
-        width: 45%;
-        height: 45%;
+        height: 200px;
     }
     75% {
         opacity: 0.8;
-        width: 65%;
-        height: 65%;
+        height: 250px;
     }
     100% {
         opacity: 1;

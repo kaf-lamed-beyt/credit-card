@@ -13,7 +13,7 @@ class App extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSelect = this.handleSelect.bind(this)
-        this.addGaps = this.addGaps.bind(this)
+        this.handleCardNumberChange = this.handleCardNumberChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -29,23 +29,32 @@ class App extends React.Component {
         })
     }
 
-    addGaps(e) {
+    handleCardNumberChange(e) {
+        // this manage the state of the card inpu as the user types in their card number
+        this.setState({
+            [e.target.name]: e.target.value,
+        })
+
+        // this section from here downwarrds manages the card number foramatting.
         let userInput = e.target.value.split(' ').join('')
         
         const firstStr = userInput[0]
         let count = 0
-        let formattedStr = ' '
+        let numberFormat = ''
 
         if (firstStr === '4' || firstStr === '5') {
             userInput = userInput.slice(0,16)
             
             for (let i = 0; i < userInput.length; i++) {
-                formattedStr += userInput[i]
+                numberFormat += userInput[i]
                 count += 1
                 if (count % 4 === 0 && i !== userInput.length -1) {
-                    formattedStr += ' '
+                    numberFormat += ' '
                 }
             }
+            this.setState({
+                cardNumber: numberFormat
+            })
         }
     }
 
@@ -116,11 +125,11 @@ class App extends React.Component {
                                 </div>
                                 <input
                                     type="text"
-                                    value={this.addGaps(cardNumber, 4)}
+                                    value={cardNumber}
                                     name="cardNumber"
                                     className="form__control"
                                     placeholder="0000 0000 0000 0000"
-                                    onChange={this.handleChange}
+                                    onChange={this.handleCardNumberChange}
                                 />
                             </div>
                             <div className="form__group">

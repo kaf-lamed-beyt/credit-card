@@ -28342,7 +28342,7 @@ var App = /*#__PURE__*/function (_React$Component) {
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     _this.handleSelect = _this.handleSelect.bind(_assertThisInitialized(_this));
-    _this.addGaps = _this.addGaps.bind(_assertThisInitialized(_this));
+    _this.handleCardNumberChange = _this.handleCardNumberChange.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -28358,45 +28358,47 @@ var App = /*#__PURE__*/function (_React$Component) {
       this.setState(_defineProperty({}, e.target.name, e.target.value));
     }
   }, {
-    key: "addGaps",
-    value: function addGaps(str, gapNo) {
-      var newStr = ' ';
-      var len = str.length;
+    key: "handleCardNumberChange",
+    value: function handleCardNumberChange(e) {
+      // this manage the state of the card inpu as the user types in their card number
+      this.setState(_defineProperty({}, e.target.name, e.target.value)); // this section from here downwarrds manages the card number foramatting.
 
-      for (var i = 0; i < len; i++) {
-        newStr = newStr + str[i];
+      var userInput = e.target.value.split(' ').join('');
+      var firstStr = userInput[0];
+      var count = 0;
+      var numberFormat = '';
 
-        while (newStr.length % (gapNo + 1) === 0) {
-          newStr = newStr + ' ';
+      if (firstStr === '4' || firstStr === '5') {
+        userInput = userInput.slice(0, 16);
+
+        for (var i = 0; i < userInput.length; i++) {
+          numberFormat += userInput[i];
+          count += 1;
+
+          if (count % 4 === 0 && i !== userInput.length - 1) {
+            numberFormat += ' ';
+          }
         }
-      }
 
-      return newStr.trim(' ');
+        this.setState({
+          cardNumber: numberFormat
+        });
+      }
     }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      var _this$state = this.state,
-          cardNumber = _this$state.cardNumber,
-          cardName = _this$state.cardName,
-          yearOption = _this$state.yearOption,
-          monthOption = _this$state.monthOption,
-          cvv = _this$state.cvv;
       e.preventDefault();
-
-      if (cardNumber || cardName || yearOption || monthOption || cvv === ' ') {
-        alert("This fields can't be empty");
-      }
     }
   }, {
     key: "render",
     value: function render() {
-      var _this$state2 = this.state,
-          cardNumber = _this$state2.cardNumber,
-          cardName = _this$state2.cardName,
-          cvv = _this$state2.cvv,
-          yearOption = _this$state2.yearOption,
-          monthOption = _this$state2.monthOption;
+      var _this$state = this.state,
+          cardNumber = _this$state.cardNumber,
+          cardName = _this$state.cardName,
+          cvv = _this$state.cvv,
+          yearOption = _this$state.yearOption,
+          monthOption = _this$state.monthOption;
       return _react.default.createElement("main", null, _react.default.createElement("div", {
         className: "app__base"
       }, _react.default.createElement("div", {
@@ -28453,11 +28455,11 @@ var App = /*#__PURE__*/function (_React$Component) {
         className: "input number"
       }, _react.default.createElement("label", null, "Card Number")), _react.default.createElement("input", {
         type: "text",
-        value: this.addGaps(cardNumber, 4),
+        value: cardNumber,
         name: "cardNumber",
         className: "form__control",
         placeholder: "0000 0000 0000 0000",
-        onChange: this.handleChange
+        onChange: this.handleCardNumberChange
       })), _react.default.createElement("div", {
         className: "form__group"
       }, _react.default.createElement("div", {
@@ -28675,7 +28677,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42575" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44795" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
