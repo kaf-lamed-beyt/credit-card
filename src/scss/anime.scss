@@ -5,15 +5,25 @@
 }
 
 .form__card {
-    animation: skewScale 3s forwards linear;
+    animation: skewScale 2s forwards;
     opacity: 0;
     animation-delay: 2s;
 }
 
 form {
     opacity: 0;
-    animation: skewScale 3s forwards linear;
-    animation-delay: 7s;
+    animation: 3s fadeIn forwards;
+    animation-delay: 5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: .4;
+    } 50% {
+        opacity: .8;
+    } 100% {
+        opacity: 1;
+    }
 }
 
 @keyframes drop {
@@ -32,19 +42,23 @@ form {
 @keyframes skewScale {
     0% {
         opacity: 0.2;
-        height: 50px;
+        height: 80px;
+        width: 80px;
     }
     25% {
         opacity: 0.4;
         height: 150px;
+        width: 150px;
     }
     50% {
         opacity: 0.6;
-        height: 200px;
+        height: 245px;
+        width: 245px;
     }
     75% {
         opacity: 0.8;
-        height: 250px;
+        height: 285px;
+        width: 285px;
     }
     100% {
         opacity: 1;
