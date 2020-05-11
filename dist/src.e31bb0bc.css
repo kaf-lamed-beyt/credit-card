@@ -3,7 +3,7 @@
   width: 440px;
   height: 252px;
   background: #e45521;
-  margin-top: 7%;
+  margin-top: 5%;
   margin-left: 10%;
   border-radius: 8px; }
 
@@ -119,7 +119,7 @@ body {
 .form__card {
   height: 525px;
   width: 680px;
-  margin-top: -9%;
+  margin-top: -11%;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px; }
 
@@ -183,6 +183,23 @@ form {
   color: ghostwhite;
   font-weight: bold;
   background: #0ba05d; }
+
+@media only screen and (max-width: 576px) {
+  .app__base {
+    width: 100%;
+    margin: 0 auto;
+    margin-left: -1%;
+    margin-top: 5em; }
+  .form__card {
+    width: 98%;
+    margin-left: .8em;
+    height: 86%; }
+  .credit__card {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1em; }
+  .expiry {
+    font-size: 1em; } }
 
 .credit__card {
   animation: drop 3s forwards;
